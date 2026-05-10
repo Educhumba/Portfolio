@@ -239,9 +239,9 @@ export default function PortfolioDashboard() {
           <div className="relative w-[380px] h-[380px] md:w-[450px] md:h-[450px] rounded-[40px] bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600 p-[2px] shadow-2xl shadow-cyan-500/20">
             <div className="w-full h-full rounded-[38px] bg-[#0b1120] overflow-hidden relative group">
               {/* Profile Image Goes Here */}
-              <img 
-                src={`${import.meta.env.BASE_URL}profile.jpg`} 
-                alt="Edwin Chumba" 
+              <img
+                src={`/Portfolio/profile.jpg`}
+                alt="Edwin Chumba"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0b1121] via-transparent to-transparent opacity-80 pointer-events-none"></div>
@@ -267,7 +267,7 @@ export default function PortfolioDashboard() {
             </h2>
 
             <p className="text-gray-300 text-lg leading-relaxed max-w-5xl">
-              I am a passionate developer and aspiring AI engineer focused on building impactful solutions using artificial intelligence, data science, backend systems, and modern frontend technologies. I combine machine learning knowledge with full stack development skills to create scalable intelligent systems and visually engaging digital experiences.
+              I am a passionate web developer and aspiring AI engineer focused on building impactful solutions using artificial intelligence, data science, backend systems, and modern frontend technologies. I combine machine learning knowledge with full stack development skills to create scalable intelligent systems and visually engaging digital experiences.
             </p>
           </div>
 

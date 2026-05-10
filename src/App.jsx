@@ -240,7 +240,7 @@ export default function PortfolioDashboard() {
             <div className="w-full h-full rounded-[38px] bg-[#0b1120] overflow-hidden relative group">
               {/* Profile Image Goes Here */}
               <img 
-                src="/profile.jpg" 
+                src={`${import.meta.env.BASE_URL}profile.jpg`} 
                 alt="Edwin Chumba" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />

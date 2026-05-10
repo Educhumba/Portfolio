@@ -213,10 +213,14 @@ export default function PortfolioDashboard() {
               View Projects
               <ArrowUpRight className="w-5 h-5" />
             </a>
-            <a href="/Portfolio/Edwin_Chumba_CV.pdf">
-              <button className="px-8 py-4 rounded-2xl border border-white/20 hover:border-cyan-400 hover:bg-white/5 transition-all duration-300 font-semibold hover:scale-105">
-                Download CV
-              </button>
+            <a 
+              href="/Portfolio/Edwin_Chumba_CV.pdf"
+              download="Edwin_Chumba_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-2xl border border-white/20 hover:border-cyan-400 hover:bg-white/5 transition-all duration-300 font-semibold hover:scale-105 flex items-center justify-center"
+            >
+              Download CV
             </a>
           </div>
 

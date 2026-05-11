@@ -48,6 +48,24 @@ export default function PortfolioDashboard() {
 
   const projects = [
     {
+      title: "CarHire-Pro",
+      description:
+        "A professional full-stack Laravel car hire management system featuring vehicle listings, booking workflows, admin dashboard management, authentication systems, responsive UI design, database integration, and modern user experience principles.",
+      stack: [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS"
+      ],
+      github: "https://github.com/Educhumba/CarHire-Pro",
+      featured: true,
+      badge: "Featured Laravel Project"
+    },
+
+    {
       title: "ICCDK Organizational Website",
       description:
         "Designed and developed a professional modern website for ICCDK (Islamic Chamber of Commerce and Development Kenya), focusing on responsive UI/UX, structured organizational presentation, modern frontend architecture, and scalable web experience for an internationally affiliated organization.",
@@ -177,9 +195,10 @@ export default function PortfolioDashboard() {
               <a
                 key={item}
                 href={`#${item}`}
-                className="hover:text-cyan-400 transition duration-300 capitalize hover:-translate-y-1"
+                className="hover:text-cyan-400 transition-all duration-300 capitalize hover:-translate-y-1 hover:scale-105 relative group"
               >
                 {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
@@ -209,9 +228,9 @@ export default function PortfolioDashboard() {
           </p>
 
           <div className="flex flex-wrap gap-5 mb-10">
-            <a href="#projects" className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 hover:shadow-cyan-500/30 shadow-2xl transition-all duration-300 font-bold flex items-center gap-3">
+            <a href="#projects" className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 hover:shadow-cyan-500/30 shadow-2xl transition-all duration-300 font-bold flex items-center gap-3 hover:from-cyan-400 hover:to-blue-500 group">
               View Projects
-              <ArrowUpRight className="w-5 h-5" />
+              <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
             </a>
             <a 
               href="/Portfolio/Edwin_Chumba_CV.pdf"
@@ -225,15 +244,15 @@ export default function PortfolioDashboard() {
           </div>
 
           <div className="flex items-center gap-5">
-            <a href="https://github.com/Educhumba" target="_blank" className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black">
+            <a href="https://github.com/Educhumba" target="_blank" className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30">
               <Github />
             </a>
 
-            <a href="#" className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black">
+            <a href="#" className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30">
               <Linkedin />
             </a>
 
-            <a href="mailto:edudechumba6767@gmail.com" className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black">
+            <a href="mailto:edudechumba6767@gmail.com" className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500 hover:text-black hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30">
               <Mail />
             </a>
           </div>
@@ -331,7 +350,7 @@ export default function PortfolioDashboard() {
                 {items.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm hover:bg-cyan-500 hover:text-black hover:scale-105 transition-all duration-300 cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm hover:bg-cyan-500 hover:text-black hover:scale-105 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-cyan-500/20"
                   >
                     {skill}
                   </span>
@@ -344,64 +363,98 @@ export default function PortfolioDashboard() {
 
       {/* PROJECTS */}
       <section id="projects" className="relative z-10 max-w-7xl mx-auto px-6 py-24">
-        <div className="flex items-center justify-between flex-wrap gap-6 mb-16">
-          <div>
-            <h2 className="text-5xl font-black mb-4">
-              Featured <span className="text-cyan-400">Projects</span>
+        <div className="flex items-center justify-between flex-wrap gap-8 mb-20">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 backdrop-blur-xl mb-4">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm tracking-wide text-cyan-300 font-semibold">
+                Premium Projects Showcase
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black leading-tight">
+              Featured <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">Projects</span>
             </h2>
-            <p className="text-gray-400 text-lg">
-              Real-world systems, AI applications, machine learning workflows, and scalable web platforms.
+            <p className="text-gray-400 text-lg max-w-2xl">
+              Full-stack web applications, AI-powered systems, Laravel platforms, and intelligent digital experiences built with modern technologies.
             </p>
           </div>
 
-          <div className="px-6 py-3 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-300 font-semibold">
-            10+ Projects Built
+          <div className="flex flex-col gap-3">
+            <div className="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 text-purple-300 font-semibold hover:scale-105 transition-all duration-300">
+              10+ Projects Built
+            </div>
+            <div className="px-6 py-3 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-300 font-semibold hover:scale-105 transition-all duration-300">
+              Full Stack + AI
+            </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group rounded-[32px] overflow-hidden border border-white/10 bg-slate-800/40 hover:bg-slate-800/60 backdrop-blur-md hover:border-cyan-400/50 transition-all duration-500 hover:-translate-y-3 shadow-xl"
+              className={`group relative rounded-[20px] md:rounded-[32px] overflow-hidden border border-white/10 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl hover:border-cyan-400/60 transition-all duration-700 hover:-translate-y-2 md:hover:-translate-y-4 shadow-2xl hover:shadow-cyan-500/20 ${project.featured ? 'ring-2 ring-cyan-500/20 hover:ring-cyan-500/40' : ''}`}
             >
-              <div className="h-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500"></div>
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              {/* Top gradient bar */}
+              <div className="h-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-pulse"></div>
+              </div>
 
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl font-black group-hover:text-cyan-400 transition-all duration-300">
+              <div className="p-6 md:p-8 relative z-10">
+                {/* Featured badge */}
+                {project.badge && (
+                  <div className="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 mb-4 md:mb-6 animate-pulse">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span className="text-[10px] md:text-xs font-semibold text-cyan-300 uppercase tracking-wider">
+                      {project.badge}
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between mb-4 md:mb-6">
+                  <h3 className="text-xl md:text-2xl font-black group-hover:text-cyan-400 transition-all duration-500 group-hover:scale-105 leading-tight">
                     {project.title}
                   </h3>
 
-                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:rotate-12 transition-all duration-300">
-                    ✨
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-lg shadow-cyan-500/20">
+                    <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed mb-8 text-[15px]">
+                <p className="text-gray-400 leading-relaxed mb-6 md:mb-8 text-[13px] md:text-[15px] group-hover:text-gray-300 transition-colors duration-500">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-3 mb-8">
+                <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-8">
                   {project.stack.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm hover:border-cyan-400 transition-all duration-300"
+                      className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl bg-white/5 border border-white/10 text-xs md:text-sm hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:scale-105 transition-all duration-300 cursor-default"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  className="inline-flex items-center gap-3 text-cyan-400 hover:text-cyan-300 font-semibold transition-all duration-300"
-                >
-                  View on GitHub
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                <div className="flex items-center gap-3 md:gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="inline-flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/30 hover:border-cyan-400 hover:scale-105 transition-all duration-300 font-semibold shadow-lg hover:shadow-cyan-500/30 text-sm md:text-base"
+                  >
+                    <Github className="w-4 h-4 md:w-5 md:h-5" />
+                    <span className="hidden sm:inline">View on GitHub</span>
+                    <span className="sm:hidden">GitHub</span>
+                    <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  </a>
+                </div>
               </div>
+
+              {/* Subtle glow effect on hover */}
+              <div className="absolute inset-0 rounded-[20px] md:rounded-[32px] bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
             </div>
           ))}
         </div>

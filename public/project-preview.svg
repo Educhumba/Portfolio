@@ -1,0 +1,17 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="40" fill="#111827"/>
+  <rect x="40" y="40" width="1120" height="595" rx="30" fill="url(#bg)"/>
+  <path d="M120 560H1080" stroke="#38bdf8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M120 620H1080" stroke="#8b5cf6" stroke-width="10" stroke-linecap="round"/>
+  <rect x="120" y="120" width="450" height="260" rx="24" fill="#1f2937"/>
+  <rect x="630" y="120" width="420" height="260" rx="24" fill="#1f2937"/>
+  <rect x="120" y="420" width="930" height="90" rx="24" fill="#111827"/>
+  <text x="600" y="365" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="48" font-weight="700">Project Preview</text>
+  <text x="600" y="430" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="24">Live demo, UI screenshot, and hosted preview</text>
+</svg>

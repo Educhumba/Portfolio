@@ -1,13 +1,21 @@
-export default function TimelineItem({ item, isLast }) {
+import { motion } from 'framer-motion';
+
+export default function TimelineItem({ item, index = 0, isLast }) {
   return (
-    <div className="relative pl-10">
-      <span className="absolute left-0 top-6 flex h-3 w-3 rounded-full bg-gold shadow-[0_0_12px_rgba(212,168,83,0.5)] ring-4 ring-ink" />
-      {!isLast ? <div className="absolute left-[5px] top-9 h-[calc(100%+0.5rem)] w-px bg-subtle-hover" /> : null}
-      <div className="surface-card rounded-2xl p-6 sm:p-7">
-        <span className="label-caps text-gold">{item.period}</span>
-        <h3 className="mt-3 font-display text-xl font-semibold text-cream sm:text-2xl">{item.title}</h3>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.4, delay: Math.min(index, 5) * 0.04 }}
+      className="relative pl-10"
+    >
+      <span className="absolute left-0 top-7 h-3 w-3 rounded-full bg-gold ring-4 ring-ink" />
+      {!isLast ? <div className="absolute bottom-0 left-[5px] top-10 w-px bg-[var(--border-subtle)]" /> : null}
+      <article className="surface-card rounded-2xl p-6 sm:p-7">
+        <p className="label-caps text-gold">{item.period}</p>
+        <h3 className="mt-3 font-display text-2xl font-semibold text-cream">{item.title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-cream-muted">{item.description}</p>
-      </div>
-    </div>
+      </article>
+    </motion.div>
   );
 }

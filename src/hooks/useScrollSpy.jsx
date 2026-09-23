@@ -1,29 +1,31 @@
 import { useEffect, useState } from 'react';
 
-export function useScrollSpy(sectionIds, options = {}) {
+export function useScrollSpy(sectionIds) {
   const [activeId, setActiveId] = useState(sectionIds[0]);
+  const idsKey = sectionIds.join('|');
 
   useEffect(() => {
+    const ids = idsKey.split('|').filter(Boolean);
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleSection = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        if (visibleSection) {
+        if (visibleSection?.target?.id) {
           setActiveId(visibleSection.target.id);
         }
       },
-      { rootMargin: '0px 0px -32% 0px', threshold: [0.25, 0.5, 0.75], ...options }
+      { rootMargin: '-20% 0px -55% 0px', threshold: [0.05, 0.15, 0.4] }
     );
 
-    sectionIds.forEach((id) => {
+    ids.forEach((id) => {
       const section = document.getElementById(id);
       if (section) observer.observe(section);
     });
 
     return () => observer.disconnect();
-  }, [sectionIds, options]);
+  }, [idsKey]);
 
   return activeId;
 }

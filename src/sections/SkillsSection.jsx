@@ -4,14 +4,14 @@ import SkillCard from '../components/SkillCard.jsx';
 export default function SkillsSection({ skills }) {
   return (
     <section id="skills" className="section-pad">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <SectionTitle
-          highlight="Expertise"
-          title="Skills that ship real products"
-          description="From Laravel marketplaces and React frontends to LangChain assistants and ML pipelines."
+          highlight="Skills"
+          title="An engineering stack, with a clear center of gravity"
+          description="Programming, frontend, backend, and data work carry the most weight. Infrastructure and digital engineering support how those systems reach production."
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {skills.map((skill, index) => (
             <SkillCard key={skill.title} skill={skill} index={index} />
           ))}

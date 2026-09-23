@@ -1,6 +1,12 @@
-export default function SkillBadge({ children }) {
+export default function SkillBadge({ children, strong = false }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-subtle bg-subtle px-3 py-1.5 text-xs font-medium text-cream-muted transition hover:border-gold/25 hover:text-cream">
+    <span
+      className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs transition ${
+        strong
+          ? 'border-gold/40 bg-gold-soft font-semibold text-cream'
+          : 'border-subtle bg-subtle font-medium text-cream-muted'
+      }`}
+    >
       {children}
     </span>
   );

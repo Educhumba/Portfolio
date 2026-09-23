@@ -81,6 +81,10 @@ html[data-theme="dark"] {
     scroll-behavior: smooth;
   }
 
+  main .grid > * {
+    min-width: 0;
+  }
+
   html[data-theme="light"] {
     color-scheme: light;
   }
@@ -216,5 +220,101 @@ html[data-theme="dark"] {
 
   .project-img-overlay {
     background: var(--img-overlay);
+  }
+
+  .elevate-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+
+  .elevate-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+    border-color: color-mix(in srgb, var(--color-gold) 35%, var(--border-subtle));
+  }
+
+  .skill-card {
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-teal) 35%, var(--border-subtle));
+  }
+
+  .skill-card-core {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .project-card {
+    position: relative;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-gold) 80%, transparent),
+      transparent 42%,
+      color-mix(in srgb, var(--color-teal) 75%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .project-card:hover::before,
+  .project-card:focus-within::before {
+    opacity: 1;
+  }
+
+}
+
+#home,
+#about,
+#expertise,
+#skills,
+#work,
+#library,
+#experience,
+#certifications,
+#contact {
+  scroll-margin-top: 5.75rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .elevate-card,
+  .elevate-card:hover,
+  .skill-card:hover,
+  .project-media,
+  .project-card::before {
+    transition: none;
+    transform: none;
+  }
+
+  .animate-pulse,
+  .animate-bounce {
+    animation: none;
   }
 }

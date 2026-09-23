@@ -5,7 +5,9 @@ import { Home, User, Layers, Award, Briefcase, Mail, Sparkles } from 'lucide-rea
 const iconMap = {
   home: Home,
   about: User,
+  expertise: Sparkles,
   skills: Layers,
+  work: Briefcase,
   projects: Sparkles,
   certifications: Award,
   experience: Briefcase,
@@ -31,7 +33,7 @@ export default function Sidebar({ items, activeId, onNavigate }) {
 
           <nav className="space-y-2">
             {items.map((item) => {
-              const Icon = iconMap[item.id];
+              const Icon = iconMap[item.id] || Home;
               const isActive = activeId === item.id;
               return (
                 <button
@@ -103,7 +105,7 @@ export default function Sidebar({ items, activeId, onNavigate }) {
           </div>
           <nav className="space-y-2">
             {items.map((item) => {
-              const Icon = iconMap[item.id];
+              const Icon = iconMap[item.id] || Home;
               return (
                 <button
                   key={item.id}

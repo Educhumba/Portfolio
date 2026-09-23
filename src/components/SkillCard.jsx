@@ -1,40 +1,50 @@
 import { motion } from 'framer-motion';
-import { Zap, Code2, Cpu, Layers } from 'lucide-react';
+import { Brain, Code2, Database, Globe, LineChart, Search, Server, Workflow } from 'lucide-react';
 import SkillBadge from './ui/SkillBadge.jsx';
 
-const badgeIconMap = {
-  'Languages & Backend': Code2,
-  'Frontend & UI': Layers,
-  'Data & AI': Cpu,
-  'Tools & DevOps': Zap,
+const iconMap = {
+  code: Code2,
+  frontend: Globe,
+  backend: Workflow,
+  data: LineChart,
+  ai: Brain,
+  database: Database,
+  infra: Server,
+  seo: Search,
 };
 
 export default function SkillCard({ skill, index = 0 }) {
-  const Icon = badgeIconMap[skill.title] || Code2;
+  const Icon = iconMap[skill.icon] || Code2;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <motion.article
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, delay: index * 0.06 }}
-      viewport={{ once: true, amount: 0.2 }}
-      className="surface-card group rounded-2xl p-6 transition hover:border-teal/20"
+      transition={{ duration: 0.4, delay: Math.min(index, 6) * 0.04 }}
+      viewport={{ once: true, amount: 0.15 }}
+      className={`surface-card skill-card rounded-2xl p-6 ${skill.core ? 'skill-card-core' : ''}`}
     >
-      <div className="mb-6 flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-soft text-teal">
-          <Icon className="h-5 w-5" />
+      <div className="mb-5 flex items-center gap-4">
+        <div
+          className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+            skill.core ? 'bg-gold-soft text-gold' : 'bg-teal-soft text-teal'
+          }`}
+        >
+          <Icon className="h-5 w-5" aria-hidden />
         </div>
         <div>
-          <h3 className="font-display text-lg font-semibold text-cream">{skill.title}</h3>
-          <p className="text-xs text-cream-dim">Production stack</p>
+          <h3 className="font-display text-2xl font-semibold text-cream">{skill.title}</h3>
+          {skill.core ? <p className="text-xs uppercase tracking-[0.18em] text-gold">Primary practice</p> : null}
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-2">
         {skill.items.map((item) => (
-          <SkillBadge key={item}>{item}</SkillBadge>
+          <li key={item.name}>
+            <SkillBadge strong={item.strong}>{item.name}</SkillBadge>
+          </li>
         ))}
-      </div>
-    </motion.div>
+      </ul>
+    </motion.article>
   );
 }
